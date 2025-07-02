@@ -1,1 +1,1 @@
-trigger:\n  branches:\n    include:\n    - main\npool:\n  vmImage: ubuntu-latest\nsteps:\n- task: NodeTool@0\n  inputs:\n    versionSpec: 14.x\n  displayName: Install Node.js\n- script: npm install\n  displayName: Install dependencies\n- script: npm test\n  displayName: Run tests\n
+trigger:\n  branches:\n    include:\n    - main\npool:\n  vmImage: ubuntu-latest\nsteps:\n- task: NodeTool@0\n  inputs:\n    versionSpec: 14.x\n- script: 'npm install\n\n    '\n  displayName: Install dependencies\n- script: 'npm test\n\n    '\n  displayName: Run tests\n"  
