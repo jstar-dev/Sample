@@ -1,1 +1,1 @@
-trigger:\n  branches:\n    include:\n    - main\npool:\n  vmImage: ubuntu-latest\nsteps:\n- task: Maven@3\n  inputs:\n    goals: clean install\n- task: PublishTestResults@2\n  inputs:\n    testResultsFormat: JUnit\n    searchFolder: '**/target/surefire-reports'\n    failOnNoTestResults: true"  
+trigger:\n  branches:\n    include:\n    - main\npool:\n  vmImage: ubuntu-latest\nsteps:\n- task: Maven@3\n  inputs:\n    goals: clean install\n- task: PublishTestResults@2\n  inputs:\n    testResultsFormat: JUnit\n    testResultsFiles: '**/target/surefire-reports/*.xml'\n"  
