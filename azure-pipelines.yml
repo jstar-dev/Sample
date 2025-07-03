@@ -1,1 +1,1 @@
-trigger:\n  branches:\n    include:\n    - main\npool:\n  vmImage: ubuntu-latest\nsteps:\n- task: MavenAuthenticate@0\n  inputs:\n    mavenServiceConnection: your-service-connection-name\n- script: mvn install\n  displayName: Install dependencies\n- script: mvn test\n  displayName: Run tests\n"  
+trigger:\n  branches:\n    include:\n    - main\npool:\n  vmImage: ubuntu-latest\nsteps:\n- script: 'python -m pip install --upgrade pip\n\n    pip install -r requirements.txt\n\n    '\n  displayName: Install dependencies\n- script: 'pytest\n\n    '\n  displayName: Run tests\n"  
